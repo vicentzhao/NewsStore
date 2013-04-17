@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:background="#333333"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        >
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:text="多米音乐"
+            android:background="#00C5CD" />
+
+        <ImageView
+            android:id="@+id/title_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_launcher" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/appimage"
+           android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/appname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="34dp"
+            android:textSize="28sp"
+            android:layout_toRightOf="@+id/appimage"
+            android:text="多米" />
+        <TextView
+            android:id="@+id/appcompany"
+            android:layout_marginTop="10dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_alignLeft="@+id/appname"
+            android:layout_below="@+id/appname"
+            android:text="作者：多米音乐" />
+
+        <TextView
+            android:layout_marginTop="5dip"
+            android:id="@+id/Issuedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_alignLeft="@+id/appcompany"
+            android:layout_below="@+id/appcompany"
+            android:text="发行日期：2013-02-26" />
+         </RelativeLayout>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dip"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/versions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@+id/appimage"
+            android:layout_marginRight="15dp"
+            android:singleLine="false"
+            android:textSize="24sp"
+            android:text=" 版本：4.0" />
+        
+        <TextView
+            android:id="@+id/publishdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@+id/versions"
+            android:layout_marginRight="15dp"
+            android:textSize="24sp"
+            android:layout_marginTop="5dip"
+            android:singleLine="false"
+            android:text=" 发布日期：2012.4.1" />
+        
+        <TextView
+            android:id="@+id/platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@+id/publishdate"
+            android:textSize="24sp"
+            android:layout_marginRight="15dp"
+            android:singleLine="false"
+            android:text=" 应用平台：windows" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="10dip"
+        android:layout_width="wrap_content"
+         android:layout_marginLeft="20dp"
+         android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/uninstall"
+            android:layout_width="100dip"
+            android:layout_height="40dp"
+            android:layout_below="@+id/music10"
+            android:visibility="visible"
+            android:text="已安装" />
+          <Button
+            android:id="@+id/install"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/uninstall"
+            android:layout_below="@+id/music10"
+            android:text="下载" />
+            </RelativeLayout>
+    <TextView
+        android:id="@+id/textView6"
+        android:textSize="28sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="热门推荐"
+        android:layout_marginLeft="20dp" />
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" >
+ <LinearLayout
+            android:id="@+id/items01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <include
+                android:id="@+id/item_hor_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_02" />
+
+            <include
+                android:id="@+id/item_hor_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_03" />
+
+            <include
+                android:id="@+id/item_hor_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_04" />
+
+            <include
+                android:id="@+id/item_hor_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                />
+             <include
+                android:id="@+id/item_hor_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                 android:nextFocusRight="@+id/item_hor_06"
+                 android:nextFocusDown="@+id/itme_hor_10"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+</ScrollView>

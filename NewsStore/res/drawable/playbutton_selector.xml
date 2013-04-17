@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 
+    <item android:state_focused="false"  
+        android:drawable="@drawable/hoverbk_normal" />  
+     <item android:state_focused="true"     android:drawable= "@drawable/hoverbk_select" /> 
+     <item android:state_selected="true" android:drawable="@drawable/hoverbk_select"></item>
+      -->
+       <item android:state_focused="false"  
+      android:drawable="@drawable/hoverbk_normal" /> 
+     <item android:drawable="@drawable/drawable_videoitem_selector_unselect" android:state_focused="true"/>
+     <item android:drawable="@drawable/drawable_button_bg" android:state_focused="false"/>
+    <item android:drawable="@drawable/drawable_videoitem_selector_select" android:state_selected="true"/>
+    <item android:drawable="@drawable/drawable_videoitem_selector_select" android:state_pressed="true"/>
+</selector>

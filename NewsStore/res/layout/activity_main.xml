@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="horizontal" >
+
+    <fragment
+        android:id="@+id/left"
+        android:name="com.store.smhilaw1.MainActivity$LeftFragment"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="7" />
+
+    
+        <View 
+        android:layout_width="1dip"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dip"
+        android:background="@drawable/long_string"
+        />
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <!--
+         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/select"
+                android:layout_width="160dip"
+                android:layout_height="33dip"
+                android:layout_marginLeft="200dip"
+                android:layout_marginTop="35dip"
+                android:background="@drawable/search3"
+                android:drawableRight="@drawable/search4"
+                android:gravity="center"
+                android:hint="@string/select_hint"
+                android:textColor="@color/text_grey" />
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="350dip"
+                android:layout_height="33dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginTop="35dip"
+                android:background="@drawable/search1"
+                android:drawableRight="@drawable/search2"
+                android:gravity="center"
+                android:hint="@string/search_hint"
+                android:textColor="@color/text_grey" />
+        </LinearLayout>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/right"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left"
+            android:layout_marginBottom="20dip"
+            android:layout_marginLeft="50dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="20dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="20dip"
+        android:layout_height="fill_parent"
+        android:maxWidth="30dip"
+        android:orientation="vertical" />
+
+</LinearLayout>
