@@ -1,0 +1,42 @@
+package com.hxws.bean;
+
+public class ShopInfoBean {
+	private String shop_name;
+	private String favorable_info;
+	private String address;
+	private String count;
+	private String image_path;
+	
+	
+	public String getShop_name() {
+		return shop_name;
+	}
+	public void setShop_name(String shop_name) {
+		this.shop_name = shop_name;
+	}
+	public String getFavorable_info() {
+		return favorable_info;
+	}
+	public void setFavorable_info(String favorable_info) {
+		this.favorable_info = favorable_info;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCount() {
+		return count;
+	}
+	public void setCount(String count) {
+		this.count = count;
+	}
+	public String getImage_path() {
+		return image_path;
+	}
+	public void setImage_path(String image_path) {
+		this.image_path = image_path;
+	}
+
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	<color name="none">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="red">#FFDE0000</color>
+    <color name="orange">#FFEF6800</color>
+	<color name="blue">#ff0000ff</color>
+	<color name="gray">#FF888888</color>
+    <color name="lightgrey">#FFEBE7DB</color>
+    <color name="text_tint">#cccccc</color>
+    <color name="text_grey">#999999</color>
+	<color name="text_black">#666666</color>
+	<color name="text_dark">#333333</color>
+	<color name="text_blue">#6992cc</color>
+	<color name="text_dark_yellow">#904c0f</color>
+	<color name="text_dark_green">#246423</color>
+	<color name="text_dark_blue">#255581</color>
+	<color name="bg_black">#303030</color>
+	<color name="bottom_button_bg">#ececec</color>
+	<color name="text_view_border">#D6D6D6</color>
+	<color name="background_yellow">#FFCC33</color>
+	
+	<color name="round_progress_bar_bg_off">#FdFdFd</color>
+	<color name="bao">#87A900</color>
+	    
+	<color name="buy_lottery_content_title">#666666</color>
+	<color name="buy_lottery_count_down">#0756a0</color>
+	<color name="prompt_txt">#267524</color>
+	<color name="input_box_name">#9f9f9f</color>
+	<color name="content_txt_red_C">#cc0000</color>
+	<color name="content_txt_6">#666666</color>
+	<color name="content_txt_A">#AAAAAA</color>
+	<color name="content_txt_red">#bc4c4c</color>
+	
+	<color name="charts_yellow_bg_color">#FFF6E0</color>
+	<color name="transparent">#4F4F2F</color>
+	<color name="shiguanlan">#5F9F9F</color>
+	    	<color name="color_bright_green">#a6da00</color>
+	    	
+	    	
+	    	 <color name="bg">#80000000</color>
+    <color name="level">#1111FF</color>
+    <color name="white">#ffffff</color>
+    <color name="controller_bg">#80006454</color>
+    <color name="province_bg">#b4000000</color>
+    <color name="dialog_progress">#AAFF00</color>
+    <color name="dialog_msg">#00AAFF</color>
+    <color name="Color_verificationCode">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="grey">#80abaaaa</color>
+    
+    
+        <color name="GridView_Item_Title">#FFFFFF</color>
+    <color name="GridView_Item_Text">#ff9a9a9a</color>
+</resources>

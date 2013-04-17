@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/controller_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/controller"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/controller_bg"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <SeekBar
+            android:id="@+id/controller_seekbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="10dip"
+            android:nextFocusDown="@+id/controller_play_pause"
+            android:nextFocusLeft="@+id/controller_seekbar"
+            android:nextFocusRight="@+id/controller_seekbar"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:progressDrawable="@drawable/menu_player_controller_seekbar_style"
+            android:thumb="@drawable/thumb_selector"
+            android:thumbOffset="25dip" />
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/controller_filename"
+                android:layout_width="300dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dip"
+                android:singleLine="true"
+                android:text="filename"
+                android:textColor="@color/white"
+                android:textSize="22dip" />
+
+            <TextView
+                android:id="@+id/controller_process"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dip"
+                android:text="00:00:00/00:00:00"
+                android:textColor="@color/white"
+                android:textSize="22dip" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" >
+
+                <Button
+                    android:id="@+id/controller_prev"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_previous_selector" />
+
+<!--                 <Button
+                    android:id="@+id/controller_fb"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_fb_selector" /> -->
+
+                <Button
+                    android:id="@+id/controller_play_pause"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_play_selector" />
+
+                <Button
+                    android:id="@+id/controller_stop"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_stop_selector" />
+
+                <!-- <Button
+                    android:id="@+id/controller_ff"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_ff_selector" /> -->
+
+                <Button
+                    android:id="@+id/controller_next"
+                    style="@style/player_menu_btn"
+                    android:background="@drawable/player_next_selector" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:id="@+id/infoBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dip"
+                    android:text="@string/speed_instant"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/total_speed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:text="@string/speed_average"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/avgspeed"
+                    android:layout_width="60dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/percent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:text="Buffer status"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/buffer_percent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:text="buffer:"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/bufferbytes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dip"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/controller_silence"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/controller_voicebar"
+                android:background="@drawable/player_sound_selector" />
+
+            <SeekBar
+                android:id="@+id/controller_voicebar"
+                android:layout_width="150dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dip"
+                android:max="100"
+                android:maxHeight="10dip"
+                android:nextFocusDown="@+id/controller_silence"
+                android:nextFocusLeft="@+id/controller_silence"
+                android:nextFocusRight="@+id/controller_voicebar"
+                android:nextFocusUp="@+id/controller_silence"
+                android:progressDrawable="@drawable/seekbar_img"
+                android:thumb="@drawable/seekbar_thumb_img"
+                android:thumbOffset="-1dip" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

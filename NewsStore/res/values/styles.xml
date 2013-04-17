@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ContentButton">
+        <item name="android:layout_width">68dip</item>
+        <item name="android:layout_height">62dip</item>
+        <item name="android:layout_marginLeft">-4dip</item>
+        <item name="android:text">01</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/ring_roundbox_selector</item>
+    </style>
+
+    <style name="font">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.header">
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.menu1">
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="font.menu2">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="font.text">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.zongyi_list">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.image_text">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.image_text_small">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.image_text_jin_ri_tui_jian">
+        <item name="android:textSize">54sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.filmname">
+        <item name="android:textSize">38sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.recommendtext">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.filmname_big">
+        <item name="android:textSize">46sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.page_index">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="font.search_layout_title">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font.search_item">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="font.button_category">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/btn_level1_selector</item>
+    </style>
+
+    <style name="font.button_category.menu">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="font.button_choosebar">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/btn_choosebar</item>
+    </style>
+
+    <style name="player_menu_name">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="player_menu_btn">
+        <item name="android:layout_width">94dip</item>
+        <item name="android:layout_height">94dip</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="home_frame_layout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="home_middle_layout">
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:layout_marginRight">14dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">350dp</item>
+    </style>
+
+    <style name="home_gallery_layout">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingBottom">51dp</item>
+        <item name="android:paddingTop">0dp</item>
+    </style>
+
+    <style name="home_recommend_name" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/layer_name</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">-72dp</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">27dp</item>
+        <item name="android:layout_width">569dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="home_gallery_layer_top">
+        <item name="android:layout_width">664dp</item>
+        <item name="android:layout_height">360dp</item>
+    </style>
+    <!-- gallery图片默认大小 -->
+    <integer-array name="gallery_img_layout_params">
+        <item>450</item>
+        <item>226</item>
+    </integer-array>
+
+    <integer name="gallery_scale">10</integer>
+    <!-- 画廊版首页相关样式 end -->
+    <style name="home_detail" parent="android:Widget.TextView">
+        <item name="android:paddingLeft">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="home_button" parent="android:Widget.Button">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AnimationFade">
+        <item name="android:windowEnterAnimation">@anim/in_lefttoright</item>
+        <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
+    </style>
+    
+    <style name="AnimationControllerFade">
+        <item name="android:windowEnterAnimation">@anim/controller_in</item>
+        <item name="android:windowExitAnimation">@anim/controller_out</item>
+    </style>
+ <style name="H720P_46sp_FontSize">
+        <item name="android:textSize">46.0sp</item>
+    </style>
+    <style name="H720P_32sp_FontSize">
+        <item name="android:textSize">32.0sp</item>
+    </style>
+    <style name="H720P_30sp_FontSize">
+        <item name="android:textSize">30.0sp</item>
+    </style>
+    <style name="H720P_28sp_FontSize">
+        <item name="android:textSize">28.0sp</item>
+    </style>
+    <style name="H720P_24sp_FontSize">
+        <item name="android:textSize">24.0sp</item>
+    </style>
+    <style name="H720P_20sp_FontSize">
+        <item name="android:textSize">20.0sp</item>
+    </style>
+</resources>

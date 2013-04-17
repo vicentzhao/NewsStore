@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/background"
+    android:orientation="horizontal" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="30dip"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="horizontal" >
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/logo" />
+            <Button
+                android:id="@+id/myMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/logo"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:textSize="20dip" />
+
+            <Button
+                android:id="@+id/store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:layout_toRightOf="@id/myMusic"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:textSize="20dip" />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="40dip"
+                android:background="@drawable/search" />
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dip"
+                android:layout_marginLeft="100dip"
+                android:layout_marginRight="20dip"
+                android:paddingLeft="10dip"
+                android:layout_toLeftOf="@id/search_button"
+                android:layout_toRightOf="@id/store"
+                android:background="@drawable/input"
+                android:hint="@string/serch_hint"
+                />
+        </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_gravity="bottom"
+            android:background="#505050" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <fragment
+                android:id="@+id/left"
+                android:name="com.ccdrive.moviestore.main.MainActivity1$LeftFragment"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"                                             
+                android:layout_weight="5" />
+
+            
+                <RelativeLayout
+                    android:id="@+id/right"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="10dip"
+                     />
+                
+              
+                 
+        </LinearLayout>
+    </LinearLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:background="#333333"
+    >
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        >
+        <TextView
+            android:id="@+id/musicdetail_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="多米音乐"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:background="#00C5CD" />
+        <ImageView
+            android:id="@+id/title_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_launcher" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/albumimage"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_launcher" />
+        <TextView
+            android:id="@+id/albumname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@+id/albumimage"
+            android:textSize="28dp"
+            android:text="花蝴蝶" />
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="2001dp"
+             android:textSize="28dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/albumname"
+            android:layout_below="@+id/albumname"
+            android:text="歌手：蔡依林" />
+
+        <TextView
+            android:id="@+id/Issuedate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:textSize="28dp"
+            android:layout_alignLeft="@+id/artist"
+            android:layout_below="@+id/artist"
+            android:text="发行日期：2013-02-26" />
+          <TextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/Issuedate"
+            android:layout_below="@+id/Issuedate"
+            android:textSize="28dp"
+            android:text="语言：国语" />
+           <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_alignLeft="@+id/artist"
+            android:layout_height="wrap_content"
+                  android:layout_marginBottom="8.0dip"
+            android:layout_below="@+id/language"
+            android:textSize="28dp"
+            android:text="语言：国语" />
+      <ImageView
+           android:id="@+id/fengefu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:layout_below="@+id/company"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+        <TextView
+            android:id="@+id/albuminfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:layout_marginLeft="45dp"
+            android:layout_below="@+id/fengefu"
+            android:layout_marginRight="15dp"
+            android:singleLine="false"
+            android:lines="4"
+            android:text="    2009年万众期待华人天后蔡依林全新国语专辑【花蝴蝶】即将登场！蔡依林千变万化，不断创新的尝试，来到华纳发行的第一张专辑，Jolin和唱片公司老板工作员工都更上一层楼，以倍数的创意、预算、成本、力量务求带给歌迷前所未有的视听感受，从造型/舞蹈/包装/照片/MV,每个层面都涵盖......：" />
+        <!-- 
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="46dp"
+            android:layout_alignBottom="@+id/artist"
+            android:textSize="28dp"
+            android:layout_toRightOf="@+id/Issuedate"
+            android:text="语言：国语" />
+ 
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:layout_alignBaseline="@+id/Issuedate"
+            android:layout_alignBottom="@+id/Issuedate"
+            android:layout_alignLeft="@+id/language"
+            android:text="唱片公司：华纳唱片" />
+-->
+
+ <Button
+            android:id="@+id/btn_order_allmusic"
+            android:layout_width="wrap_content"
+              android:layout_marginLeft="46dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/Issuedate"
+            android:layout_alignBaseline="@+id/albumname"
+             android:text="订阅全部"
+           />
+    </RelativeLayout>
+     <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+       
+       <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:id="@+id/musiclist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="剧集列表"
+        android:textSize="24sp"
+        android:layout_marginLeft="20dp" />
+    <Button 
+          android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="01-10"
+        android:visibility="invisible"
+        />
+      <Button 
+          android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:visibility="invisible"
+        android:text="11-20"
+        />
+       <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:visibility="invisible"
+        android:text="21-30"
+        />
+    </LinearLayout>
+       <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+       
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8.0dip"
+        android:background="@drawable/drawable_selector"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/i_text_episode_text1"
+            style="@style/H720P_24sp_FontSize"
+            android:layout_width="fill_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text2"
+            style="@style/H720P_24sp_FontSize"
+             android:layout_width="fill_parent"
+             android:focusable="true"
+    android:focusableInTouchMode="true"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text3"
+            style="@style/H720P_24sp_FontSize"
+             android:layout_width="fill_parent"
+             android:focusable="true"
+    android:focusableInTouchMode="true"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text4"
+            style="@style/H720P_24sp_FontSize"
+            android:focusable="true"
+    android:focusableInTouchMode="true"
+             android:layout_weight="1"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text5"
+            style="@style/H720P_24sp_FontSize"
+            android:layout_weight="1"
+             android:layout_width="fill_parent"
+             android:focusable="true"
+    android:focusableInTouchMode="true"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text6"
+            style="@style/H720P_24sp_FontSize"
+             android:layout_weight="1"
+             android:focusable="true"
+    android:focusableInTouchMode="true"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text7"
+            style="@style/H720P_24sp_FontSize"
+           android:layout_weight="1"
+           android:focusable="true"
+    android:focusableInTouchMode="true"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text8"
+            style="@style/H720P_24sp_FontSize"
+            android:focusable="true"
+    android:focusableInTouchMode="true"
+         android:layout_weight="1"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text9"
+            style="@style/H720P_24sp_FontSize"
+           android:layout_weight="1"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+    android:focusableInTouchMode="true"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="@color/GridView_Item_Title" />
+        <TextView
+            android:id="@+id/i_text_episode_text10"
+            style="@style/H720P_24sp_FontSize"
+           android:layout_weight="1"
+           android:focusable="true"
+    android:focusableInTouchMode="true"
+             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/playbutton_selector"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/GridView_Item_Title" />
+        
+    </LinearLayout>
+ <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+       
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="热门推荐"
+        android:textSize="30sp"
+        android:layout_marginLeft="20dp" />
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8.0dip"
+            android:layout_marginTop="12.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawable_divider" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" >
+         <LinearLayout
+            android:id="@+id/items01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <include
+                android:id="@+id/item_hor_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_02" />
+            <include
+                android:id="@+id/item_hor_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_03" />
+
+            <include
+                android:id="@+id/item_hor_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_04" />
+
+            <include
+                android:id="@+id/item_hor_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                />
+             <include
+                android:id="@+id/item_hor_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/music_sketch_hor_item"
+                 android:nextFocusRight="@+id/item_hor_06"
+                 android:nextFocusDown="@+id/itme_hor_10"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+</ScrollView>

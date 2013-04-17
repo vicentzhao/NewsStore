@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+     >  
+     
+           <!--  <ImageView
+                android:id="@+id/logo"
+                android:layout_width="180dip"
+                android:layout_height="130dip"
+                android:layout_marginLeft="100dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/logo"
+                android:contentDescription="@string/app_name" /> -->
+                
+   <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dip"
+    android:layout_marginTop="20dip"
+    android:layout_marginBottom="20dip"
+    android:layout_gravity="center"
+     > 
+
+            <Button
+                android:id="@+id/flfg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/book_selector"
+                android:contentDescription="@string/app_name" />
+
+            <Button
+                android:id="@+id/al"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/newspaper_seletor"
+                android:contentDescription="@string/app_name"/>
+
+            <Button
+                android:id="@+id/flwsys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/print_seletor"
+                android:contentDescription="@string/app_name" />
+            
+            <Button
+                android:id="@+id/movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/movie_seletor"
+                android:contentDescription="@string/app_name" />
+            
+            <Button
+                android:id="@+id/teleplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/teleplay_seletor"
+                android:contentDescription="@string/app_name" />
+            
+            <Button
+                android:id="@+id/anime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/al"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/anime_seletor"
+                android:contentDescription="@string/app_name" />
+            <!--  
+            <Button
+                android:id="@+id/music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/al"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/music_seletor"
+                android:contentDescription="@string/app_name" />
+            -->
+            <Button
+                android:id="@+id/record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/al"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/record_seletor"
+                android:contentDescription="@string/app_name" />
+            
+            
+            </LinearLayout>
+  </LinearLayout>

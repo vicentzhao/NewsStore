@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dip"
+        android:layout_toLeftOf="@+id/info"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/items01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <include
+                android:id="@+id/item_hor_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_02" />
+
+            <include
+                android:id="@+id/item_hor_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_03" />
+
+            <include
+                android:id="@+id/item_hor_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_04" />
+
+            <include
+                android:id="@+id/item_hor_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                />
+             <include
+                android:id="@+id/item_hor_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                 android:nextFocusRight="@+id/item_hor_06"
+                 android:nextFocusDown="@+id/itme_hor_10"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/items02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <include
+                android:id="@+id/item_hor_06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_07" />
+            <include
+                android:id="@+id/item_hor_07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_08" />
+
+            <include
+                android:id="@+id/item_hor_08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_09" />
+             <include
+                android:id="@+id/item_hor_09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                />
+            <include
+                android:id="@+id/item_hor_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusDown="@+id/item_hor_15"
+                android:nextFocusRight="@+id/item_hor_11"
+                android:nextFocusLeft="@+id/item_hor_09"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/items03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+            <include
+                android:id="@+id/item_hor_11"
+                android:layout_width="wrap_content"
+                 android:nextFocusDown="@+id/page_pre"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_12" />
+            <include
+                android:id="@+id/item_hor_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:nextFocusDown="@+id/page_pre"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_13" />
+            <include
+                android:id="@+id/item_hor_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:nextFocusDown="@+id/page_next"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusRight="@+id/item_hor_14" />
+            <include
+                android:id="@+id/item_hor_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:nextFocusDown="@+id/page_next"
+                layout="@layout/design_sketch_hor_item"
+                />
+            <include
+                android:id="@+id/item_hor_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                layout="@layout/design_sketch_hor_item"
+                android:nextFocusUp="@+id/item_hor_10"
+                android:nextFocusLeft="@+id/item_hor_14"
+                android:nextFocusDown="@+id/page_next"
+                android:nextFocusRight="@+id/item_hor_15" />
+        </LinearLayout>
+    </LinearLayout>
+     
+       
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="-5dip"
+            android:gravity="center"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/page_pre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/arrow_left_selector" />
+            <TextView
+                android:id="@+id/field_page_index"
+                style="@style/font.page_index"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dip"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="第1页" />
+            <Button
+                android:id="@+id/page_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/arrow_right_selector" />
+        </LinearLayout>
+      
+
+</RelativeLayout>
