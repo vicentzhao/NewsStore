@@ -38,6 +38,7 @@
                 android:id="@+id/flwsys"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginTop="10dip"
                 android:layout_weight="1"
                 android:background="@drawable/print_seletor"
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
                 android:layout_weight="1"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:background="@drawable/movie_seletor"
                 android:contentDescription="@string/app_name" />
 

@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name">影视商城</string>
+    <string name="app_name">新闻商城</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">影视商城</string>
+    <string name="title_activity_main">新闻商城</string>
 	<string name="search_hint">Search</string>
 	<string name="select_hint">请选择</string>
 	<string name="total">总计：</string>
@@ -17,8 +17,8 @@
 	<string name="login_secuss">登录成功</string>
 	<string name="login_fail">登录失败</string>
 	
-	<string name="my_music">我的影视</string>
-	<string name="music_store">影视商店</string>
+	<string name="my_music">我的新闻</string>
+	<string name="music_store">新闻商店</string>
 	<string name="serch_hint">输入搜索内容</string>
 	 <string name="nosdcard">没有找到sd卡，请插入sd卡再进行下载完成更新。</string>
 	<string name="field_title">...</string>
@@ -37,7 +37,7 @@
 	<string name="searchkey">请输入关键字</string>
 	<string name="nocontent">没有您想要的数据，请重试</string>
 	<string name="exit">是否选择退出</string>
-	<string name="exitContent">是否选择退出影视商城</string>
+	<string name="exitContent">是否选择退出新闻商城</string>
 	<string name="startDown">正在下载</string>
 	<string name="downErro">下载出现异常，请重试</string>
 	<string name="downComplete">下载完成</string>

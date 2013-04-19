@@ -46,13 +46,14 @@
                 android:id="@+id/flwsys"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_weight="1"
                 android:layout_marginTop="10dip"
                 android:background="@drawable/print_seletor"
                 android:contentDescription="@string/app_name" />
             
             <Button
-                android:id="@+id/movie"
+                android:id="@+id/movie1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
