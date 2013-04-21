@@ -1,8 +1,21 @@
 package com.ccdrive.newsstore.main;
 
 
-import java.io.Serializable;
 import java.util.ArrayList;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
@@ -12,22 +25,6 @@ import com.ccdrive.newsstore.bean.News;
 import com.ccdrive.newsstore.content.Constant;
 import com.ccdrive.newsstore.http.HttpRequest;
 import com.ccdrive.newsstore.http.ImageDownloader;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class NewsDetailActivity extends Activity {
 	
@@ -46,16 +43,35 @@ public class NewsDetailActivity extends Activity {
 		R.id.i_text_episode_text10 };
 	
 	private AQuery aQuery;
+	private LayoutInflater inflater;
+	static int isFilm = 000011; // 判断是否为music 还是mv
+	static int isTv = 000012;
+	private String whatTrueOrder =""; //订阅的内容
+	int isWhatLeft;
+	int isWhatRight;
+	private ProgressDialog pd;
+	int bo;
+	private String orderId;
 	   @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tv_detail);
 		aQuery=new AQuery(NewsDetailActivity.this);
-		Intent intent = getIntent();
-		String path = intent.getStringExtra("path");
-		int isWhatRight =intent.getIntExtra("isWhatRight", 0);
-	     News news = (News) intent.getSerializableExtra("news");
+		Intent t = getIntent();
+		int id =t.getIntExtra("id", 0);
+		int j = 0;
+		for (int i = 0; i < horItems.length; i++) {
+			if (id == horItems[i]) {
+				j = i;
+			}
+		} 
+		aQuery =new AQuery(NewsDetailActivity.this);
+		 final ArrayList<News> list =(ArrayList<News>) t.getSerializableExtra("list");
+		 isWhatRight =t.getIntExtra("isWhatRight", 0);
+		  isWhatLeft =t.getIntExtra("isWhatLeft", 0);
+		 bo =t.getIntExtra("iswhat", 0);
+		 orderId =t.getStringExtra("orderId");
 		
 		final Button btn_orderall = (Button) (findViewById(R.id.btn_order_allmusic));
 		if(isWhatRight==Constant.MYMUSIC){
@@ -70,15 +86,15 @@ public class NewsDetailActivity extends Activity {
 			tv.setWidth(LayoutParams.WRAP_CONTENT);
 		}
 		 
-			  String name = news.getName();
-			  String content =news.getContent();
-			  String image_path_boot =news.getImage_path();
-			  final String link = news.getLink();
+			  String name = list.get(j).getName();
+			  String content =list.get(j).getContent();
+			  String image_path_boot =list.get(j).getImage_path();
+			  final String link = list.get(j).getLink();
 			  TextView tv =(TextView)(findViewById(tvlistItem[0]));
 				tv.setWidth(LayoutParams.WRAP_CONTENT);
 				tv.setVisibility(View.VISIBLE);
 				tv.setText(name);
-				((TextView)findViewById(R.id.musicdetail_text))
+				((TextView) findViewById(R.id.musicdetail_text))
 						.setText(name);
 				((TextView) findViewById(R.id.albumname)).setText(name);
 				((TextView)findViewById(R.id.albuminfo)).setText(content);
@@ -89,18 +105,19 @@ public class NewsDetailActivity extends Activity {
 						if(link!=null){
 						Uri uri = Uri.parse(link);
 						Intent it = new Intent(Intent.ACTION_VIEW,uri);
-					       startActivity(it);
+						aQuery.getContext().startActivity(it);
 						}
 					}
 				});
-				String image_path = HttpRequest.URL_QUERY_SINGLE_IMAGE
+				String path = HttpRequest.URL_QUERY_SINGLE_IMAGE
 				+ image_path_boot;
-		ImageView imageView = (ImageView)findViewById(R.id.albumimage);
+		ImageView imageView = (ImageView) findViewById(R.id.albumimage);
 		ImageDownloader downloader = new ImageDownloader(aQuery
 				.getContext());
-		downloader.download(image_path, imageView);
-		final String myId =news.getId();
+		downloader.download(path, imageView);
+		final String myId =list.get(j).getId();
 		findViewById(R.id.btn_order_allmusic).setOnClickListener(new OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
 				String path = HttpRequest.URL_QUERY_LIST_ORDER_NEWS_SINGLE+myId;
@@ -118,14 +135,9 @@ public class NewsDetailActivity extends Activity {
 							Toast.makeText(aQuery.getContext(), "订阅成功", 1).show();
 						}
 					}
-					
 				});
-					
-				
 			}
 		});
-	
-	   
 	   }
 
 }

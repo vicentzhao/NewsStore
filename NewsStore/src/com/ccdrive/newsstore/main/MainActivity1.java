@@ -32,7 +32,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
-import android.sax.StartElementListener;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -81,7 +80,6 @@ import com.ccdrive.newsstore.page.OrderPage;
 import com.ccdrive.newsstore.play.PlayerActivity;
 import com.ccdrive.newsstore.play.StreamingMediaPlayer;
 import com.ccdrive.newsstore.play.VitamioPlayer;
-import com.ccdrive.newsstore.util.AppUtil;
 import com.ccdrive.newsstore.util.JsonUtil;
 import com.ccdrive.newsstore.util.UpdateVersion;
 import com.ccdrive.newsstore.util.XmlParse;
@@ -468,8 +466,7 @@ public class MainActivity1 extends FragmentActivity implements
 			http = new HttpRequest();
 			http.setHttpResponseListener(this);
 			RelativeLayout layout = new RelativeLayout(getActivity());
-			itemView = inflater.inflate(R.layout.design_sketch_hor, container,
-					false);
+			itemView = inflater.inflate(R.layout.design_sketch_hor, container,false);
 			initHorizontalView();
 			layout.addView(itemView);
 			setDefalutView();
@@ -1428,7 +1425,6 @@ public class MainActivity1 extends FragmentActivity implements
 									setSoftInfo(musicAppList, path);
 									for (int i = 0; i < horItems.length; i++) {
 										final int k =i;
-										final SoftwareBean softwareBean = musicAppList.get(i);
 										itemView.findViewById(horItems[i]).setOnClickListener(
 												new OnClickListener() {
 													@Override
@@ -1436,8 +1432,8 @@ public class MainActivity1 extends FragmentActivity implements
 //														System.out.println("item被点击了");
 //														setSoftDetail(v.getId(), musicAppList);
 														Intent t = new Intent(aQuery.getContext(),AppDetailActivity.class);
-														 t.putExtra("itemid", k);
-														 t.putExtra("app", softwareBean);
+														 t.putExtra("itemid", v.getId());
+														 t.putExtra("appList", musicAppList);
 														  aQuery.getContext().startActivity(t);
 													}
 												});
@@ -1810,9 +1806,15 @@ public class MainActivity1 extends FragmentActivity implements
 //												news,
 //												orderId,
 //												iswh);
-										Intent i = new Intent(aQuery.getContext(),NewsDetailActivity.class);
-										 i.putExtra("news", news);
-										 aQuery.getContext().startActivity(i);
+										Intent i =new Intent(aQuery.getContext(),NewsDetailActivity.class);
+										i.putExtra("id", v.getId());
+										i.putExtra("orderId", orderId);
+										i.putExtra("list", music_chapterList);
+										i.putExtra("orderId", orderId);
+										i.putExtra("iswhat", isFilm);
+										i.putExtra("isWhatRight", isWhatRight);
+										i.putExtra("isWhatLeft", isWhatLeft);
+										aQuery.getContext().startActivity(i);
 										 
 									}
 								});
@@ -1905,6 +1907,13 @@ public class MainActivity1 extends FragmentActivity implements
 //										setMusicDetial(v.getId(), mvlist,
 //												viewFormusicdetail, orderid,
 //												isTv);
+										Intent i =new Intent(aQuery.getContext(),NewsDetailActivity.class);
+										i.putExtra("id", v.getId());
+										i.putExtra("list", mvlist);
+										i.putExtra("iswhat", isTv);
+										i.putExtra("isWhatRight", isWhatRight);
+										i.putExtra("isWhatLeft", isWhatLeft);
+										aQuery.getContext().startActivity(i);
 									}
 								});
 					}

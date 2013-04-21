@@ -20,13 +20,16 @@ import com.ccdrive.newsstore.util.JsonUtil;
 import com.ccdrive.newsstore.util.UpdateVersion;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -49,23 +52,31 @@ public class AppDetailActivity extends Activity {
 		R.id.i_text_episode_text6, R.id.i_text_episode_text7,
 		R.id.i_text_episode_text8, R.id.i_text_episode_text9,
 		R.id.i_text_episode_text10 };
-	
+	private int id;
+	private ArrayList<SoftwareBean> list;
 	AQuery aQuery;
 	   @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.soft_detail);
+	   Intent t =getIntent();
+	    id=t.getIntExtra("itemid",0);
+	    list =(ArrayList<SoftwareBean>) t.getSerializableExtra("appList");
+	    aQuery =new AQuery(AppDetailActivity.this);
 		final Handler hdHandler = new Handler();
 		int j = 0;
-		Intent t =getIntent();
-		 j = t.getIntExtra("itemid", 0);
-		 SoftwareBean soft = (SoftwareBean) t.getSerializableExtra("app");
-		 aQuery =new AQuery(AppDetailActivity.this);
-		final String appId = soft.getId();
+		for (int i = 0; i < horItems.length; i++) {
+			if (id == horItems[i]) {
+				j = i;
+			}
+		}
+		final String appId = list.get(j).getId();
 		
 		String appPath = HttpRequest.URL_QUERY_SINGLE_SOFT + appId;
-		final ProgressDialog Dialog = ProgressDialog.show(AppDetailActivity.this,
+		final ProgressDialog Dialog = ProgressDialog.show(aQuery.getContext(),
 				"缓冲中。。", "正在缓冲请稍后。。");
+	    ProDiaglogDimiss(Dialog);
+		Dialog.show();
 		String web_url = HttpRequest.URL_QUERY_LIST_SOFT + appId;
 		aQuery.ajax(web_url, String.class, new AjaxCallback<String>() {// 这里的函数是一个内嵌函数如果是函数体比较复杂的话这种方法就不太合适了
 					@Override
@@ -82,9 +93,9 @@ public class AppDetailActivity extends Activity {
 									final String appDownPaths = jb
 											.getString("filepath");
 									String version = jb.getString("title");
-									final String appDownPath = HttpRequest.URL_QUERY_DOWNLOAD_URL
+								final String 	appDownPath = HttpRequest.URL_QUERY_DOWNLOAD_URL
 											+ appDownPaths + "&" + "多米";
-									findViewById(R.id.install)
+								findViewById(R.id.install)
 											.setOnClickListener(
 													new OnClickListener() {
 														@Override
@@ -142,23 +153,24 @@ public class AppDetailActivity extends Activity {
 						AppUtil appUtil = new AppUtil(aQuery.getContext());
 						 boolean install = appUtil.isInstall(softBean.getName());
 						 if(install){
-							findViewById(R.id.uninstall).setVisibility(View.VISIBLE);
+							 findViewById(R.id.uninstall).setVisibility(View.VISIBLE);
 							findViewById(R.id.uninstall).setFocusable(false);
-						findViewById(R.id.install).setVisibility(View.GONE);
+							findViewById(R.id.install).setVisibility(View.GONE);
 						 }else{
-							findViewById(R.id.uninstall).setVisibility(View.GONE);
-							 findViewById(R.id.install).setVisibility(View.VISIBLE);
+							 findViewById(R.id.uninstall).setVisibility(View.GONE);
+							findViewById(R.id.install).setVisibility(View.VISIBLE);
 						 }
-						((TextView) findViewById(R.id.appname)).setText(softBean.getName());
-						((TextView) findViewById(R.id.title_text)).setText(softBean.getName());
-						((TextView) findViewById(R.id.appcompany)).setText(aQuery.getContext().getResources().getString(R.string.soft_company)+softBean.getAuthor());
-						((TextView)findViewById(R.id.Issuedate)).setText(aQuery.getContext().getResources().getString(R.string.soft_addDate)+softBean.getRelease());
-						((TextView) findViewById(R.id.versions)).setText(aQuery.getContext().getResources().getString(R.string.soft_version)+softBean.getVersion());
+						((TextView)findViewById(R.id.appname)).setText(softBean.getName());
+						((TextView)findViewById(R.id.title_text)).setText(softBean.getName());
+						((TextView)findViewById(R.id.appcompany)).setText(aQuery.getContext().getResources().getString(R.string.soft_company)+softBean.getAuthor());
+						((TextView) findViewById(R.id.Issuedate)).setText(aQuery.getContext().getResources().getString(R.string.soft_addDate)+softBean.getRelease());
+						((TextView)findViewById(R.id.versions)).setText(aQuery.getContext().getResources().getString(R.string.soft_version)+softBean.getVersion());
 						((TextView) findViewById(R.id.publishdate)).setText(aQuery.getContext().getResources().getString(R.string.soft_reledate)+softBean.getRelease());
 						((TextView) findViewById(R.id.platform)).setText(aQuery.getContext().getResources().getString(R.string.soft_evenment)+softBean.getEnvironment());
+						setSoftrecommend(list);
 						String path = HttpRequest.URL_QUERY_SINGLE_IMAGE
 								+ softBean.getImage_path();
-						ImageView imageView = (ImageView) findViewById(R.id.appimage);
+						ImageView imageView = (ImageView)findViewById(R.id.appimage);
 						ImageDownloader downloader = new ImageDownloader(aQuery
 								.getContext());
 						downloader.download(path, imageView);
@@ -174,77 +186,90 @@ public class AppDetailActivity extends Activity {
 				}
 			}
 		});
-		 
-//		 setrecommdSoft();
-	
-	}
-//	private void setrecommdSoft() {
-//			ImageDownloader Downloader = new ImageDownloader(aQuery.getContext());
-//			for (int i = 0; i < 5; i++) {
-//				findViewById(horItems[i]).setVisibility(View.VISIBLE);
-//			}
-//			int j = 0;
-//			
-//			 aQuery.ajax(Constant.A, type, callback)
-//			if (list.size() < 5) {
-//				for (int s = 0; s < 5 - list.size(); s++) {
-//					view.findViewById(horItems[4 - s]).setVisibility(View.GONE);
-//				}
-//			}
-//			for (int i = 0; i < ((list.size() <= 5) ? list.size() : 5); i++) {
-//				final String image_path_boots = list.get(i).getImage_path();
-//				final int h = horItems[i];
-//				SoftwareBean sb = list.get(i);
-//				final String name = list.get(i).getName();
-//				final String path_root = list.get(i).getDownload_path();
-//				final String author = list.get(i).getAuthor();
-//				final String release = list.get(i).getRelease();
-//				final String addDate =list.get(i).getAddDate();
-//				final String version =list.get(i).getVersion();
-//				final String evenment=list.get(i).getEnvironment();
-//				String image_path = sb.getImage_path();
-//				final String title = sb.getName();
-//				String turePath = HttpRequest.URL_QUERY_SINGLE_IMAGE + image_path;
-//				Downloader.download(
-//						turePath,
-//						((ImageView) view.findViewById(horItems[i]).findViewById(
-//								R.id.ItemIcon)));
-//				((TextView) view.findViewById(horItems[i]).findViewById(
-//						R.id.ItemTitle)).setText(title);
-//				view.findViewById(horItems[i]).setOnClickListener(
-//						new OnClickListener() {
-//							@Override
-//							public void onClick(View v) {
-//								appDownPath = HttpRequest.URL_QUERY_DOWNLOAD_URL
-//										+ path_root;
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.appname)).setText(name);
-//								String path = HttpRequest.URL_QUERY_SINGLE_IMAGE
-//										+ image_path_boots;
-//								ImageView imageView = (ImageView) viewForsoftDetail
-//										.findViewById(R.id.appimage);
-//								ImageDownloader downloader = new ImageDownloader(
-//										aQuery.getContext());
-//								downloader.download(path, imageView);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.appname)).setText(name);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.title_text)).setText(name);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.appcompany)).setText(aQuery.getContext().getResources().getString(R.string.soft_company)+author);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.Issuedate)).setText(aQuery.getContext().getResources().getString(R.string.soft_addDate)+addDate);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.versions)).setText(aQuery.getContext().getResources().getString(R.string.soft_version)+version);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.publishdate)).setText(aQuery.getContext().getResources().getString(R.string.soft_reledate)+release);
-//								((TextView) viewForsoftDetail
-//										.findViewById(R.id.platform)).setText(aQuery.getContext().getResources().getString(R.string.soft_evenment)+evenment);
-//							}
-//						});
-//			}
-//		
-//		
-//	}
-    
+	   }
+	   public  void DiaglogDimiss(Dialog dialog){
+			  dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+					@Override
+					public boolean onKey(DialogInterface dialog, int keyCode,
+							KeyEvent event) {
+						 if (keyCode == KeyEvent.KEYCODE_BACK){
+						          // Perform action on key press
+							 dialog.dismiss();
+						          return true;
+						        }
+						return false;
+					}
+				});
+		  }
+		  public  void ProDiaglogDimiss(ProgressDialog dialog){
+			  dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+				  @Override
+				  public boolean onKey(DialogInterface dialog, int keyCode,
+						  KeyEvent event) {
+					  if (keyCode == KeyEvent.KEYCODE_BACK){
+						  // Perform action on key press
+						  dialog.dismiss();
+						  return true;
+					  }
+					  return false;
+				  }
+			  });
+		  }
+		  private  void setSoftrecommend(ArrayList<SoftwareBean> list) {
+
+				ImageDownloader Downloader = new ImageDownloader(aQuery.getContext());
+				for (int i = 0; i < 5; i++) {
+					findViewById(horItems[i]).setVisibility(View.VISIBLE);
+				}
+				int j = 0;
+				if (list.size() < 5) {
+					for (int s = 0; s < 5 - list.size(); s++) {
+						findViewById(horItems[4 - s]).setVisibility(View.GONE);
+					}
+				}
+				for (int i = 0; i < ((list.size() <= 5) ? list.size() : 5); i++) {
+					final String image_path_boots = list.get(i).getImage_path();
+					final int h = horItems[i];
+					SoftwareBean sb = list.get(i);
+					final String name = list.get(i).getName();
+					final String path_root = list.get(i).getDownload_path();
+					final String author = list.get(i).getAuthor();
+					final String release = list.get(i).getRelease();
+					final String addDate =list.get(i).getAddDate();
+					final String version =list.get(i).getVersion();
+					final String evenment=list.get(i).getEnvironment();
+					final String image_path = sb.getImage_path();
+					final String title = sb.getName();
+					String turePath = HttpRequest.URL_QUERY_SINGLE_IMAGE + image_path;
+					String appDownPath = HttpRequest.URL_QUERY_DOWNLOAD_URL
+							+ path_root;
+					Downloader.download(
+							turePath,
+							((ImageView) findViewById(horItems[i]).findViewById(
+									R.id.ItemIcon)));
+					((TextView) findViewById(horItems[i]).findViewById(
+							R.id.ItemTitle)).setText(title);
+					findViewById(horItems[i]).setOnClickListener(
+							new OnClickListener() {
+								@Override
+								public void onClick(View v) {
+									((TextView)findViewById(R.id.appname)).setText(name);
+									String path = HttpRequest.URL_QUERY_SINGLE_IMAGE
+											+ image_path;
+									ImageView imageView = (ImageView) findViewById(R.id.appimage);
+									ImageDownloader downloader = new ImageDownloader(
+											aQuery.getContext());
+									downloader.download(path, imageView);
+									((TextView) findViewById(R.id.appname)).setText(name);
+									((TextView)findViewById(R.id.title_text)).setText(name);
+									((TextView)findViewById(R.id.appcompany)).setText(aQuery.getContext().getResources().getString(R.string.soft_company)+author);
+									((TextView)findViewById(R.id.Issuedate)).setText(aQuery.getContext().getResources().getString(R.string.soft_addDate)+addDate);
+									((TextView)findViewById(R.id.versions)).setText(aQuery.getContext().getResources().getString(R.string.soft_version)+version);
+									((TextView)findViewById(R.id.publishdate)).setText(aQuery.getContext().getResources().getString(R.string.soft_reledate)+release);
+									((TextView)findViewById(R.id.platform)).setText(aQuery.getContext().getResources().getString(R.string.soft_evenment)+evenment);
+								}
+							});
+				}
+			}
+
 }

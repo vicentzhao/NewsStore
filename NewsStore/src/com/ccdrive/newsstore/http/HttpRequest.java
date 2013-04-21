@@ -41,8 +41,8 @@ import android.util.Log;
 
 public class HttpRequest {
      
-//	public static  String WEB_ROOT = "http://124.193.177.154:9007/";  
-	public static  String WEB_ROOT ="http://192.168.1.32:8080/";  
+	public static  String WEB_ROOT = "http://124.193.177.154:9007/";  
+//	public static  String WEB_ROOT ="http://192.168.1.32:8080/";  
 //	http://124.193.177.154:9007/index/softshop!getFile.action?token=myadmin&sid=135909554233700001&type=music
 //	http://192.168.1.32:8080
 //	public static  String WEB_ROOT = "http://42.121.6.154/";
@@ -73,8 +73,8 @@ public class HttpRequest {
 	public static String URL_QUERY_STROE_ALL_SOFT = WEB_ROOT + "index/softshop.action?token=myadmin&resultType=json&type=1&currentPage=";
 	public static String URL_QUERY_SINGLE_SOFT = WEB_ROOT + "index/softshop!content.action?token=myadmin&resultType=json&&id=";
 	
-	public static String URL_QUERY_STORE_ALL_NEWS=WEB_ROOT+"newslinkshop.action?token=myadmin&resultType=json&currentPage=";  //所有的新闻
-	public static String URL_QUERY_lIST_ORDER_NEWS=WEB_ROOT+"newslinkshop!orderList.action?token=myadmin&resultType=json&currentPage=";//已经收藏的新闻
+	public static String URL_QUERY_STORE_ALL_NEWS=WEB_ROOT+"newslinkshop.action?token=myadmin&resultType=json&pageSize=15&currentPage=";  //所有的新闻
+	public static String URL_QUERY_lIST_ORDER_NEWS=WEB_ROOT+"newslinkshop!orderList.action?token=myadmin&pageSize=15&resultType=json&currentPage=";//已经收藏的新闻
 	public static String URL_QUERY_SINGLE_ORDER=WEB_ROOT+"newslinkshop!order.action?nid=";  //收藏新闻
 	
 	public static String URL_QUERY_LIST_RECORD = WEB_ROOT + "index/tapeshop!getworks.action?token=myadmin&id=";
