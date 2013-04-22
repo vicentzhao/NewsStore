@@ -73,7 +73,7 @@ public class HttpRequest {
 	public static String URL_QUERY_STROE_ALL_SOFT = WEB_ROOT + "index/softshop.action?token=myadmin&resultType=json&type=1&currentPage=";
 	public static String URL_QUERY_SINGLE_SOFT = WEB_ROOT + "index/softshop!content.action?token=myadmin&resultType=json&&id=";
 	
-	public static String URL_QUERY_STORE_ALL_NEWS=WEB_ROOT+"newslinkshop.action?token=myadmin&resultType=json&pageSize=15&currentPage=";  //所有的新闻
+	public static String URL_QUERY_STORE_ALL_NEWS=WEB_ROOT+"newslinkshop.action?token=myadmin&resultType=json&pageSize=15&type=3&currentPage=";  //所有的新闻
 	public static String URL_QUERY_lIST_ORDER_NEWS=WEB_ROOT+"newslinkshop!orderList.action?token=myadmin&pageSize=15&resultType=json&currentPage=";//已经收藏的新闻
 	public static String URL_QUERY_SINGLE_ORDER=WEB_ROOT+"newslinkshop!order.action?nid=";  //收藏新闻
 	
